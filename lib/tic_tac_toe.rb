@@ -60,9 +60,13 @@ end
 
 def won?(board)
   WIN_COMBINATIONS.detect do |win_combination|
+<<<<<<< HEAD
     (board[win_combination[0]] == board[win_combination[1]]
     && board[win_combination[1]] == board[win_combination[2]]
     && board[win_combination[0]] != ' ')
+=======
+    board[win_combination[0]] == board[win_combination[1]] && board[win_combination[1]] == board[win_combination[2]] && board[win_combination[0]] != ' '
+>>>>>>> f75533a36ca627c69d9cb9cd24520c46445cee2d
   end
 end
 
@@ -75,7 +79,8 @@ def draw?(board)
 end
 
 def over?(board)
-  !won?(board).nil? || draw?(board) == true
+  # !won?(board).nil? || draw?(board) == true
+  won? || draw? ? true : false
 end
 
 def winner(board)
